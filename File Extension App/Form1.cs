@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 namespace File_Extension_App
     //Awet Fessha
-    //Data Structures Assesment 3 task 3
     //Dictionary Hash tables
     //02/11/18
 {
@@ -25,6 +24,18 @@ namespace File_Extension_App
             InitializeComponent();
         }
 
+        //Method for finding all the items and displaying
+
+        private void btnFind_Click(object sender, EventArgs e)
+        {
+            ListOfFiles.Items.Clear();
+            foreach (KeyValuePair<String, String> item in list)
+            {
+                ListOfFiles.Items.Add(item.Key + "  " + item.Value);
+            }
         }
+
+
     }
+}
 
