@@ -35,6 +35,20 @@ namespace File_Extension_App
             }
         }
 
+        // Method to add to the list
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtAddKey.Text) && !string.IsNullOrEmpty(txtAddValue.Text))
+            {
+                key = txtAddKey.Text;
+                value = txtAddValue.Text;
+                list.Add(key, value);
+                txtAddKey.Text = "";
+                txtAddValue.Text = "";
+            }
+        }
+
+
 
     }
 }
