@@ -76,6 +76,34 @@ namespace File_Extension_App
 
         }
 
+        //Method to search an item from the list
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+
+            if (!String.IsNullOrEmpty(txtSearchItem.Text))
+            {
+
+                searchKey = txtSearchItem.Text;
+                txtSearchItem.Text = "";
+                ListOfFiles.Items.Clear();
+                if (list.ContainsKey(searchKey))
+                {
+                    MessageBox.Show("item is in the list");
+                }
+                else
+                {
+                    MessageBox.Show("Item doesn't exist in the list");
+                }
+
+
+            }
+        }
+
+
+
+
 
 
     }
