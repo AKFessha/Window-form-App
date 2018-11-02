@@ -48,6 +48,34 @@ namespace File_Extension_App
             }
         }
 
+        //Method to remove an item from the list
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtRemoveItem.Text))
+            {
+                removeKey = txtRemoveItem.Text;
+                txtRemoveItem.Text = "";
+
+                if (list.ContainsKey(removeKey))
+                {
+                    list.Remove(removeKey);
+                    ListOfFiles.Items.Clear();
+                    foreach (KeyValuePair<String, String> item in list)
+                    {
+                        ListOfFiles.Items.Add(item.Key + "  " + item.Value);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Item doesn't exist!");
+                }
+
+
+            }
+
+        }
+
 
 
     }
