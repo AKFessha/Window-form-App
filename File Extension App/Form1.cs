@@ -97,6 +97,20 @@ namespace File_Extension_App
                     MessageBox.Show("Item doesn't exist in the list");
                 }
 
+                //Method to clear the list
+
+                private void btnClear_Click(object sender, EventArgs e)
+                {
+                    ListOfFiles.Items.Clear();
+                    list.Clear();
+                    foreach (KeyValuePair<String, String> item in list)
+                    {
+                        ListOfFiles.Items.Add(item.Key + "  " + item.Value);
+                    }
+                }
+
+
+
 
             }
         }
